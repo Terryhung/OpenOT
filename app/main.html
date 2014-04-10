@@ -5,13 +5,21 @@
         <link href="styles/main.css" rel="stylesheet">
         <!-- endbuild -->
 
+        <link rel="stylesheet" href="bower_components/fontawesome/css/font-awesome.css">
+        <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
+
         <script src="bower_components/angular/angular.js"></script>
         <script src="scripts/angular/app.js"></script>
         <script src="scripts/angular/controller.js"></script>
     </head>
     <body ng-controller="GroupsCtrl">
-        <ul>
-            <li ng-repeat="group in groups">{{ group[0].url }}</li>
-        </ul>
+        <div class="panel panel-default" ng-repeat="group in groups">
+            <div class="panel-heading">{{ group.length }} Tabs</div>
+            <div class="panel-body">
+                <ul>
+                    <li ng-repeat="tab in group" ng-click="openUrl($parent.$index, $index)">{{ tab.url }}</li>
+                </ul>
+            </div>
+        </div>
     </body>
 </html>

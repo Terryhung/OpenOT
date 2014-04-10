@@ -8,4 +8,18 @@ angular.module('OpenOT.controllers', [])
         $scope.groups = result.tabGroups;
         $scope.$apply();
     });
+
+
+    $scope.openUrl = function(groupIndex, tabIndex) {
+        var group = $scope.groups[groupIndex];
+        var tab   = group[tabIndex];
+
+        chrome.tabs.create({'url': tab.url}, function() {
+            // Remove this tab from group
+            group.splice(tabIndex, 1);
+
+            $scope.groups[groupIndex] = group;
+            $scope.$apply();
+        });
+    }
 }]);
