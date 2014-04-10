@@ -2,7 +2,7 @@
 
 var tabGroups;
 chrome.storage.local.get(null, function(result) {
-    tabGroups = result.tabGroups;
+    tabGroups = result.tabGroups || [];
 });
 
 chrome.runtime.onInstalled.addListener(function (details) {

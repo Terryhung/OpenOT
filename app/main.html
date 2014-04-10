@@ -1,15 +1,17 @@
 <!doctype html>
-<html>
+<html ng-app="OpenOT">
     <head>
         <!-- build:css styles/main.css -->
         <link href="styles/main.css" rel="stylesheet">
         <!-- endbuild -->
 
-        <!-- build:js scripts/main.js -->
-        <script src="scripts/main.js"></script>
-        <!-- endbuild -->
+        <script src="bower_components/angular/angular.js"></script>
+        <script src="scripts/angular/app.js"></script>
+        <script src="scripts/angular/controller.js"></script>
     </head>
-    <body>
-      <h1>'Allo, 'Allo!</h1>
+    <body ng-controller="GroupsCtrl">
+        <ul>
+            <li ng-repeat="group in groups">{{ group[0].url }}</li>
+        </ul>
     </body>
 </html>
