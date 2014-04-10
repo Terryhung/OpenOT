@@ -1,0 +1,10 @@
+{
+  "appName": {
+    "message": "OpenOneTab",
+    "description": "The name of the application"
+  },
+  "appDescription": {
+    "message": "Open Source OneTab",
+    "description": "The description of the application"
+  }
+}
