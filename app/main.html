@@ -17,7 +17,7 @@
             <div class="panel-heading">{{ group.length }} Tabs</div>
             <div class="panel-body">
                 <ul>
-                    <li ng-repeat="tab in group" ng-click="openUrl($parent.$index, $index)">{{ tab.url }}</li>
+                    <li ng-repeat="tab in group" ng-click="openUrl($parent.$index, $index)">{{ tab.title }}</li>
                 </ul>
             </div>
         </div>
